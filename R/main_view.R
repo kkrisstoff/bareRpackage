@@ -1,5 +1,6 @@
 get_main_view <- function(input, output) {
- output$plot1 <- renderPlot({
+
+  output$plot1 <- renderPlot({
     if (input$plot_type == "base") {
       plot(mtcars$wt, mtcars$mpg)
     } else if (input$plot_type == "ggplot2") {

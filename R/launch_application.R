@@ -1,12 +1,13 @@
 #' @name bareRpackage
 #' @docType package
-#' @importFrom shiny runApp addResourcePath
+#' @import shiny
+#' @importFrom ggplot2 ggplot aes geom_point
 
 
 NULL
 
 .onLoad <- function(...) {
-    addResourcePath("shinyjs", system.file("srcjs", package = "shinyjs"))
+    # addResourcePath("shinyjs", system.file("srcjs", package = "shinyjs"))
 }
 
 #' Launch Application

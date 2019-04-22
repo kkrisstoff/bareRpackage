@@ -13,9 +13,13 @@ NULL
 #' Launch Application
 #'
 #' @export
-launch_application <- function() {
-  runApp(appDir = list(ui = build_ui(),
-                       server = build_server()))
+launch_application <- function(host, port) {
+  appDir <- list(ui = build_ui(), server = build_server())
+  if (!missing(host) && !missing(port)) {
+    shiny::runApp(appDir, display.mode = "normal", host = host, port = port)
+  } else {
+    shiny::runApp(appDir, display.mode = "normal")
+  }
 }
 
 #' Launch Application within shiny-server
